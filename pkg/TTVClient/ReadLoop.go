@@ -95,6 +95,18 @@ func (c *Client) handleTopics(msg IncomingMessage) bool {
 			c.subscriptionsHandler(*m)
 		}
 		return true
+	case Topic.TypePoints:
+		m := &PointsMsg{}
+
+		err := json.Unmarshal([]byte(msg.Data.Message), &m)
+		if err != nil {
+			return false
+		}
+
+		if c.pointsHandler != nil {
+			c.pointsHandler(*m)
+		}
+		return true
 	case Topic.TypeCommerce:
 		m := &CommerceMsg{}
 

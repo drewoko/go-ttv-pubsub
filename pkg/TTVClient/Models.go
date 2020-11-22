@@ -103,6 +103,22 @@ type SubscriptionMsg struct {
 	RecipientDisplayName string `json:"recipient_display_name"`
 }
 
+type PointsMsg struct {
+	Data struct {
+		Redemption struct {
+			User struct {
+				Id          string `json:"id"`
+				Login       string `json:"login"`
+				DisplayName string `json:"display_name"`
+			} `json:"user"`
+			Reward struct {
+				Cost float64 `json:"cost"`
+			} `json:"reward"`
+			UserInput string `json:"user_input"`
+		} `json:"redemption"`
+	} `json:"data"`
+}
+
 type BitsBadgeMsg struct {
 	UserID      string    `json:"user_id"`
 	UserName    string    `json:"user_name"`

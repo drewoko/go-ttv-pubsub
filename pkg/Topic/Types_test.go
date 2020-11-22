@@ -19,6 +19,7 @@ func TestGetType(t *testing.T) {
 		{Topic.TypeWhispers, "whispers.44322889"},
 		{Topic.TypeCommerce, "channel-commerce-events-v1.44322889"},
 		{Topic.TypeSubscriptions, "channel-subscribe-events-v1.44322889"},
+		{Topic.TypePoints, "channel-points-channel-v1.44322889"},
 		{Topic.TypeBitsBadgeNotification, "channel-bits-badge-unlocks.44322889"},
 		{Topic.TypeModerationAction, "chat_moderator_actions.test.test"},
 	}

@@ -20,6 +20,10 @@ func Subscriptions(channelID int) Topic {
 	return Topic(fmt.Sprintf("channel-subscribe-events-v1.%d", channelID))
 }
 
+func Points(channelID int) Topic {
+	return Topic(fmt.Sprintf("channel-points-channel-v1.%d", channelID))
+}
+
 func Commerce(channelID int) Topic {
 	return Topic(fmt.Sprintf("channel-commerce-events-v1.%d", channelID))
 }

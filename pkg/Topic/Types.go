@@ -9,6 +9,7 @@ const (
 	TypeBitsBadgeNotification = Type("channel-bits-badge-unlocks")
 	TypeSubscriptions         = Type("channel-subscribe-events-v1")
 	TypeCommerce              = Type("channel-commerce-events-v1")
+	TypePoints                = Type("channel-points-channel-v1")
 	TypeWhispers              = Type("whispers")
 	TypeModerationAction      = Type("chat_moderator_actions")
 	TypeInvalid               = Type("invalid")
@@ -36,6 +37,8 @@ func GetType(topic string) Type {
 		return TypeWhispers
 	case TypeModerationAction:
 		return TypeModerationAction
+	case TypePoints:
+		return TypePoints
 	}
 
 	return TypeInvalid

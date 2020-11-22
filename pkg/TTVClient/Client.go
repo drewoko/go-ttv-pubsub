@@ -37,6 +37,7 @@ type Client struct {
 	bitsHandler          BitsHandlerFunction
 	bitsBadgeHandler     BitsBadgeHandlerFunction
 	subscriptionsHandler SubscriptionsHandlerFunction
+	pointsHandler        PointsHandlerFunction
 	commerceHandler      CommerceHandlerFunction
 	whispersHandler      WhispersHandlerFunction
 	moderationHandler    ModerationActionHandlerFunction
