@@ -1,7 +1,7 @@
 package Topic_test
 
 import (
-	"github.com/theorx/go-ttv-pubsub/pkg/Topic"
+	"github.com/drewoko/go-ttv-pubsub/pkg/Topic"
 	"testing"
 )
 

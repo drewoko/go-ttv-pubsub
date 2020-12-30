@@ -1,7 +1,7 @@
 package TTVClient
 
 import (
-	"github.com/theorx/go-ttv-pubsub/pkg/Topic"
+	"github.com/drewoko/go-ttv-pubsub/pkg/Topic"
 	"time"
 )
 
@@ -40,27 +40,16 @@ type ModerationActionMsg struct {
 type WhisperMsg struct {
 	Type string `json:"type"`
 	Data struct {
-		ID       string `json:"id"`
-		LastRead int    `json:"last_read"`
-		Archived bool   `json:"archived"`
-		Muted    bool   `json:"muted"`
-		SpamInfo struct {
-			Likelihood        string `json:"likelihood"`
-			LastMarkedNotSpam int    `json:"last_marked_not_spam"`
-		} `json:"spam_info"`
-		WhitelistedUntil string `json:"whitelisted_until"`
+		ID string `json:"id"`
 	} `json:"data"`
-	DataObject struct {
-		ID       string `json:"id"`
-		LastRead int    `json:"last_read"`
-		Archived bool   `json:"archived"`
-		Muted    bool   `json:"muted"`
-		SpamInfo struct {
-			Likelihood        string `json:"likelihood"`
-			LastMarkedNotSpam int    `json:"last_marked_not_spam"`
-		} `json:"spam_info"`
-		WhitelistedUntil string `json:"whitelisted_until"`
-	} `json:"data_object"`
+	Body   string `json:"body"`
+	FromID int64  `json:"from_id"`
+	Tags   struct {
+		Login string `json:"login"`
+	} `json:"tags"`
+	Recipient struct {
+		UserName string `json:"username"`
+	} `json:"recipient"`
 }
 
 type CommerceMsg struct {

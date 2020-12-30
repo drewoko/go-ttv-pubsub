@@ -35,6 +35,10 @@ func (c *Client) SetModerationHandler(h ModerationActionHandlerFunction) {
 	c.moderationHandler = h
 }
 
+func (c *Client) SetPointsHandler(h PointsHandlerFunction) {
+	c.pointsHandler = h
+}
+
 /**
 Handler triggers for all messages received by the client
 */

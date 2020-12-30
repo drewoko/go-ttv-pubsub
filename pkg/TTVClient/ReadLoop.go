@@ -3,7 +3,7 @@ package TTVClient
 import (
 	"encoding/json"
 	"errors"
-	"github.com/theorx/go-ttv-pubsub/pkg/Topic"
+	"github.com/drewoko/go-ttv-pubsub/pkg/Topic"
 	"time"
 )
 
@@ -120,9 +120,18 @@ func (c *Client) handleTopics(msg IncomingMessage) bool {
 		}
 		return true
 	case Topic.TypeWhispers:
-		m := &WhisperMsg{}
+		v := &struct {
+			Type string `json:"type"`
+			Data string `json:"data"`
+		}{}
 
-		err := json.Unmarshal([]byte(msg.Data.Message), &m)
+		err := json.Unmarshal([]byte(msg.Data.Message), &v)
+		if err != nil {
+			return false
+		}
+
+		m := &WhisperMsg{}
+		err = json.Unmarshal([]byte(v.Data), &m)
 		if err != nil {
 			return false
 		}
